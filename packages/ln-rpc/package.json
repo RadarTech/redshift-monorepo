@@ -1,0 +1,17 @@
+{
+  "name": "@radar-redshift/ln-rpc",
+  "version": "0.1.0",
+  "description": "",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "lnrpc": "0.3.2"
+  },
+  "devDependencies": {
+    "chai-json-schema": "^1.5.0"
+  }
+}

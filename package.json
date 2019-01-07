@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "build": "tsc -b packages/htlc packages/redshift.js",
+    "build": "tsc -b packages/htlc packages/redshift.js packages/ln-rpc",
     "test": "lerna run test --stream --parallel",
     "lint": "tslint -c tslint.json 'packages/**/*.ts' --fix",
     "clean": "rimraf packages/**/dist"
