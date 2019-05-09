@@ -22,7 +22,7 @@ export interface BroadcastTxRequest {
 export interface BroadcastTxResponse {
   network: Network;
   success: boolean;
-  signedTxHex: string;
+  txId: string;
 }
 
 export interface RefundDetailsRequest {
