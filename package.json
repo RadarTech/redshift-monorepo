@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "build": "tsc -b packages/redshift-types packages/htlc packages/redshift.js",
+    "build": "tsc -b packages/redshift-types packages/redshift.js && yarn build-htlc",
     "build-htlc": "yarn build-htlc-cjs && yarn build-htlc-esm",
     "build-htlc-cjs": "tsc -b packages/htlc/tsconfig.cjs.json",
     "build-htlc-esm": "tsc -b packages/htlc/tsconfig.esm.json",
