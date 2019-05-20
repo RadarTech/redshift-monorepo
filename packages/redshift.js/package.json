@@ -5,7 +5,8 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc -b"
+    "build": "tsc -b",
+    "test": "mocha -r @ts-tools/node \"test/**/*.test.ts\" --watch-extensions ts --colors"
   },
   "keywords": [],
   "author": "RadarTech",
