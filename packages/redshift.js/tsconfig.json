@@ -5,7 +5,6 @@
     "outDir": "dist"
   },
   "references": [
-    { "path": "../htlc" }
   ],
   "exclude": [
     "test",
