@@ -1,0 +1,20 @@
+{
+  "extends": "../tsconfig.settings.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist/cjs",
+    "typeRoots": ["src/types/declarations", "node_modules/@types", "node_modules/@radar/redshift-types/declarations"],
+    "target": "es5",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "esModuleInterop": true
+  },
+  "references": [
+    { "path": "../redshift-types" }
+  ],
+  "exclude": [
+    "test",
+    "dist",
+    "src/network-models/evm/contracts"
+  ],
+}

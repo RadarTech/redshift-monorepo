@@ -2,6 +2,9 @@
   "private": true,
   "scripts": {
     "build": "tsc -b packages/redshift-types packages/htlc packages/redshift.js",
+    "build-htlc": "yarn build-htlc-cjs && yarn build-htlc-esm",
+    "build-htlc-cjs": "tsc -b packages/htlc/tsconfig.cjs.json",
+    "build-htlc-esm": "tsc -b packages/htlc/tsconfig.esm.json",
     "test": "lerna run test --stream --parallel",
     "lint": "tslint -c tslint.json 'packages/**/*.ts' --fix",
     "clean": "rimraf packages/**/dist"
