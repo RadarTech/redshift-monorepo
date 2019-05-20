@@ -5,7 +5,9 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "test": "mocha -r @ts-tools/node \"test/**/*.test.ts\" --watch-extensions ts --colors"
+    "build": "yarn build-htlc-cjs && yarn build-htlc-esm",
+    "build-htlc-cjs": "tsc -b tsconfig.cjs.json",
+    "build-htlc-esm": "tsc -b tsconfig.esm.json"
   },
   "keywords": [],
   "author": "RadarTech",

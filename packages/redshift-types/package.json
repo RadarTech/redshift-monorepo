@@ -4,7 +4,9 @@
   "description": "redshift common types",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "scripts": {},
+  "scripts": {
+    "build": "tsc -b"
+  },
   "keywords": [],
   "author": "RadarTech",
   "license": "MIT",
