@@ -5,10 +5,11 @@ import {
   Network,
   TxOutput,
 } from '@radar/redshift-types';
+import { UtxoRpcClient } from '@radar/redshift-utils';
 import bip65 from 'bip65';
 import { expect } from 'chai';
 import { HTLC, UTXO, UtxoHtlc } from '../../../../src';
-import { config, toSatoshi, UtxoRpcClient } from '../../../lib/helpers';
+import { config, toSatoshi } from '../../../lib/helpers';
 import { mineBlocks } from '../../../lib/helpers/btccli';
 
 const { funder, claimer, refunder } = config.bitcoin.integration;
