@@ -108,4 +108,15 @@ export class UtxoRpcClient extends BaseRpcClient {
     const fee = await this.estimateFee();
     return new BigNumber(String(Math.ceil(toSatoshi(fee / bytesPerKb))));
   }
+
+  /**
+   * Estimates the transaction fee per kilobyte that needs to be paid
+   * for a transaction to be included within a certain number of blocks.
+   * Use this method over estimatefee if possible. It returns more intelligent estimates.
+   * @param nBlocks How many blocks the transaction may wait before being included
+   */
+  public async estimateSmartFee(nBlocks: number): Promise<any> {
+    const result = await this.postRpcCall('estimatesmartfee', [nBlocks]);
+    return result && result.feerate;
+  }
 }

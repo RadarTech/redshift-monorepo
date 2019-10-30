@@ -11,7 +11,6 @@ import BigNumber from 'bignumber.js';
 import http from 'http';
 import https from 'https';
 import { format } from '../helpers/format';
-import { getRpcConnectionConfig } from './rpc-config';
 
 export abstract class BaseRpcClient implements IRpcClient {
   protected _network: Network;
