@@ -1,2 +1,2 @@
 export * from './validator';
-export * from './rpc';
+export * from './rpcMR';
