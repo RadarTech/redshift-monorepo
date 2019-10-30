@@ -43,4 +43,11 @@ contract('EtherSwap - General', accounts => {
     assert.equal(defaultRefundDelay.toString(), '960'); // 4 hours
     assert.equal(newRefundDelay.toString(), '2400');
   });
+
+  it('should allow transfer ownership', async () => {
+    const newOwner = accounts[1];
+    await swapInstance.transferOwnership(newOwner);
+    const owner = await swapInstance.owner();
+    assert.equal(owner, newOwner, 'New owner is deployer');
+  });
 });
