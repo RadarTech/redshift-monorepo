@@ -1,4 +1,5 @@
 import {
+  IRpcClient,
   JsonRpc,
   Network,
   NetworkError,
@@ -9,9 +10,8 @@ import axios, { AxiosInstance } from 'axios';
 import BigNumber from 'bignumber.js';
 import http from 'http';
 import https from 'https';
-import { config } from '../../config';
-import { format } from '../../helpers';
-import { IRpcClient } from '../../types';
+import { format } from '../helpers/format';
+import { getRpcConnectionConfig } from './rpc-config';
 
 export abstract class BaseRpcClient implements IRpcClient {
   protected _network: Network;
@@ -45,7 +45,10 @@ export abstract class BaseRpcClient implements IRpcClient {
     params: any,
     timeout = 1000,
   ): Promise<any> {
-    const connectionConfig: RpcConnectionConfig = config.rpc(this._network);
+    const connectionConfig: RpcConnectionConfig = getRpcConnectionConfig(
+      this._network,
+      this._subnet,
+    );
     const url = format.toUrl(connectionConfig);
     const data: JsonRpc.Request = {
       params,

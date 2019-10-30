@@ -1,7 +1,7 @@
 import { Network, Subnet } from '@radar/redshift-types';
 import BigNumber from 'bignumber.js';
 import { Tx } from 'web3/eth/types';
-import { hexToBigNumber } from '../../../helpers';
+import { hexToBigNumber } from '../../helpers/numeric';
 import { BaseRpcClient } from '../base-rpc-client';
 
 export class EthereumRpcClient extends BaseRpcClient {
