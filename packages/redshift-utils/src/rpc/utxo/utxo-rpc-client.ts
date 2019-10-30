@@ -1,4 +1,9 @@
-import { BlockResult, Network, Subnet } from '@radar/redshift-types';
+import {
+  BlockResult,
+  Network,
+  RpcConnectionConfig,
+  Subnet,
+} from '@radar/redshift-types';
 import BigNumber from 'bignumber.js';
 import { toSatoshi } from 'satoshi-bitcoin-ts';
 import { BaseRpcClient } from '../base-rpc-client';
@@ -9,8 +14,12 @@ export class UtxoRpcClient extends BaseRpcClient {
    * @param network The rpc client network
    * @param subnet The rpc client subnet
    */
-  constructor(network: Network, subnet: Subnet) {
-    super(network, subnet);
+  constructor(
+    network: Network,
+    subnet: Subnet,
+    connectionConfig: RpcConnectionConfig,
+  ) {
+    super(network, subnet, connectionConfig);
   }
 
   /**

@@ -16,6 +16,7 @@ import { getRpcConnectionConfig } from './rpc-config';
 export abstract class BaseRpcClient implements IRpcClient {
   protected _network: Network;
   protected _subnet: Subnet;
+  protected _connectionConfig: RpcConnectionConfig;
   private _clientInstancesCache: { [index: string]: AxiosInstance } = {};
 
   abstract async getBlockCount(): Promise<number>;
@@ -29,9 +30,14 @@ export abstract class BaseRpcClient implements IRpcClient {
    * @param network The rpc client network
    * @param subnet The rpc client subnet
    */
-  constructor(network: Network, subnet: Subnet) {
+  constructor(
+    network: Network,
+    subnet: Subnet,
+    connectionConfig: RpcConnectionConfig,
+  ) {
     this._network = network;
     this._subnet = subnet;
+    this._connectionConfig = connectionConfig;
   }
 
   /**
@@ -45,15 +51,11 @@ export abstract class BaseRpcClient implements IRpcClient {
     params: any,
     timeout = 1000,
   ): Promise<any> {
-    const connectionConfig: RpcConnectionConfig = getRpcConnectionConfig(
-      this._network,
-      this._subnet,
-    );
-    const url = format.toUrl(connectionConfig);
+    const url = format.toUrl(this._connectionConfig);
     const data: JsonRpc.Request = {
       params,
       id: 1,
-      jsonrpc: !!connectionConfig.port ? '1.0' : '2.0',
+      jsonrpc: !!this._connectionConfig.port ? '1.0' : '2.0',
       method: command,
     };
 
@@ -76,10 +78,10 @@ export abstract class BaseRpcClient implements IRpcClient {
 
     // Create auth payload if configured
     let auth: { username: string; password: string } | undefined = undefined;
-    if (connectionConfig.username && connectionConfig.password) {
+    if (this._connectionConfig.username && this._connectionConfig.password) {
       auth = {
-        username: connectionConfig.username,
-        password: connectionConfig.password,
+        username: this._connectionConfig.username,
+        password: this._connectionConfig.password,
       };
     }
 
