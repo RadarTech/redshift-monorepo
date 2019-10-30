@@ -50,4 +50,13 @@ contract('EtherSwap - General', accounts => {
     const owner = await swapInstance.owner();
     assert.equal(owner, newOwner, 'New owner is deployer');
   });
+
+  it('should not allow a non-owner to transfer ownership', async () => {
+    const newOwner = accounts[1];
+    await expect(
+      swapInstance.transferOwnership(newOwner, {
+        from: accounts[2],
+      }),
+    ).to.be.rejectedWith(/VM Exception while processing transaction: revert/);
+  });
 });
