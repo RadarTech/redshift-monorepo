@@ -10,7 +10,7 @@ import axios, { AxiosInstance } from 'axios';
 import BigNumber from 'bignumber.js';
 import http from 'http';
 import https from 'https';
-import { format } from '../helpers/format';
+import { format } from '../format';
 
 export abstract class BaseRpcClient implements IRpcClient {
   protected _connectionConfig: RpcConnectionConfig;
