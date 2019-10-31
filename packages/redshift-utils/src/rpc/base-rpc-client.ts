@@ -1,10 +1,7 @@
 import {
-  IRpcClient,
   JsonRpc,
-  Network,
   NetworkError,
   RpcConnectionConfig,
-  Subnet,
 } from '@radar/redshift-types';
 import axios, { AxiosInstance } from 'axios';
 import BigNumber from 'bignumber.js';
@@ -12,7 +9,7 @@ import http from 'http';
 import https from 'https';
 import { format } from '../format';
 
-export abstract class BaseRpcClient implements IRpcClient {
+export abstract class BaseRpcClient {
   protected _connectionConfig: RpcConnectionConfig;
   private _clientInstancesCache: { [index: string]: AxiosInstance } = {};
 

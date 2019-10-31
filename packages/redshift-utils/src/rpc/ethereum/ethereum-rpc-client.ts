@@ -1,4 +1,4 @@
-import { Network, RpcConnectionConfig, Subnet } from '@radar/redshift-types';
+import { RpcConnectionConfig } from '@radar/redshift-types';
 import BigNumber from 'bignumber.js';
 import { Tx } from 'web3/eth/types';
 import { hexToBigNumber } from '../../numeric';

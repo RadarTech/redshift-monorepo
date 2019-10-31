@@ -1,9 +1,4 @@
-import {
-  BlockResult,
-  Network,
-  RpcConnectionConfig,
-  Subnet,
-} from '@radar/redshift-types';
+import { BlockResult, RpcConnectionConfig } from '@radar/redshift-types';
 import BigNumber from 'bignumber.js';
 import { toSatoshi } from 'satoshi-bitcoin-ts';
 import { BaseRpcClient } from '../base-rpc-client';
