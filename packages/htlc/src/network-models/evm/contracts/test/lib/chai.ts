@@ -4,3 +4,5 @@ import chaiShallowDeepEqual from 'chai-shallow-deep-equal';
 
 chai.use(chaiAsPromised);
 chai.use(chaiShallowDeepEqual);
+
+export const { expect } = chai;

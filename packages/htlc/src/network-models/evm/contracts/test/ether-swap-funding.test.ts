@@ -1,5 +1,6 @@
 import { EtherSwapInstance } from '../types/truffle-contracts';
 import { config, etherToWei } from './lib';
+import { expect } from './lib/chai';
 
 // tslint:disable:variable-name
 const Swap = artifacts.require('EtherSwap');
