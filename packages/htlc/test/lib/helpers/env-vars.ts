@@ -1,5 +1,5 @@
 import { Network, Subnet } from '@radar/redshift-types';
-import { getRpcConnectionConfig } from '@radar/redshift-utils';
+import { getRpcConnectionConfig } from '../rpc-config';
 
 export function getRpcUrl(network: Network, subnet: Subnet): string {
   const { host, port } = getRpcConnectionConfig(network, subnet);

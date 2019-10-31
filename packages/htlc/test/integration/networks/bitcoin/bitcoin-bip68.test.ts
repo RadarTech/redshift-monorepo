@@ -6,12 +6,13 @@ import {
   RpcConnectionConfig,
   TxOutput,
 } from '@radar/redshift-types';
-import { getRpcConnectionConfig, UtxoRpcClient } from '@radar/redshift-utils';
+import { UtxoRpcClient } from '@radar/redshift-utils';
 import bip68 from 'bip68';
 import { expect } from 'chai';
 import { HTLC, UTXO, UtxoHtlc } from '../../../../src';
 import { config, toSatoshi } from '../../../lib/helpers';
 import { mineBlocks } from '../../../lib/helpers/btccli';
+import { getRpcConnectionConfig } from '../../../lib/rpc-config';
 
 const { funder, claimer, refunder } = config.bitcoin.integration;
 const feeTokensPerVirtualByte = 1;
