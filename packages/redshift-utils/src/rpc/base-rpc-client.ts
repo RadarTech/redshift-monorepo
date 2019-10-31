@@ -13,8 +13,6 @@ import https from 'https';
 import { format } from '../helpers/format';
 
 export abstract class BaseRpcClient implements IRpcClient {
-  protected _network: Network;
-  protected _subnet: Subnet;
   protected _connectionConfig: RpcConnectionConfig;
   private _clientInstancesCache: { [index: string]: AxiosInstance } = {};
 
@@ -26,16 +24,9 @@ export abstract class BaseRpcClient implements IRpcClient {
 
   /**
    * Instantiate a new rpc client
-   * @param network The rpc client network
-   * @param subnet The rpc client subnet
+   * @param connectionConfig The rpc connection configuration
    */
-  constructor(
-    network: Network,
-    subnet: Subnet,
-    connectionConfig: RpcConnectionConfig,
-  ) {
-    this._network = network;
-    this._subnet = subnet;
+  constructor(connectionConfig: RpcConnectionConfig) {
     this._connectionConfig = connectionConfig;
   }
 

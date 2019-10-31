@@ -7,15 +7,10 @@ import { BaseRpcClient } from '../base-rpc-client';
 export class EthereumRpcClient extends BaseRpcClient {
   /**
    * Instantiate a new ethereum rpc client
-   * @param network The rpc client network
-   * @param subnet The rpc client subnet
+   * @param connectionConfig The rpc connection configuration
    */
-  constructor(
-    network: Network,
-    subnet: Subnet,
-    connectionConfig: RpcConnectionConfig,
-  ) {
-    super(network, subnet, connectionConfig);
+  constructor(connectionConfig: RpcConnectionConfig) {
+    super(connectionConfig);
   }
 
   /**

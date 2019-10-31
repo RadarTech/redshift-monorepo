@@ -112,11 +112,7 @@ describe('UTXO BIP68 HTLC - Bitcoin Network', () => {
       BitcoinSubnet.SIMNET,
     );
     // Instantiate a new rpc client
-    rpcClient = new UtxoRpcClient(
-      Network.BITCOIN,
-      BitcoinSubnet.SIMNET,
-      connectionConfig,
-    );
+    rpcClient = new UtxoRpcClient(connectionConfig);
   });
 
   describe('Fund', () => {
