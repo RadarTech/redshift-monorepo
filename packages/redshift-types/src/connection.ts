@@ -5,6 +5,10 @@ export interface RpcConnectionConfig {
   username: string;
   password: string;
   https: boolean;
+  maxReconnectionDelay?: number;
+  minReconnectionDelay?: number;
+  reconnectionDelayGrowFactor?: number;
+  debug?: boolean;
 }
 
 export namespace JsonRpc {
