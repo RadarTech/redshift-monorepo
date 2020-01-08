@@ -83,6 +83,8 @@ export enum SimnetOnChainTicker {
   SXLM = 'SXLM', // Simnet Stellar Lumens
   SDCR = 'SDCR', // Simnet Decred
   SUSDC = 'SUSDC', // Simnet USDC
+  SZRX = 'SZRX', // Simnet ZRX
+  SWETH = 'SWETH', // Simnet WETH (wrapped ETH)
 }
 
 /**
@@ -96,6 +98,8 @@ export enum TestnetOnChainTicker {
   TXLM = 'TXLM', // Testnet Stellar Lumens
   TDCR = 'TDCR', // Testnet Decred
   KUSDC = 'KUSDC', // Kovan Testnet USDC
+  KZRX = 'KZRX', // Kovan ZRX
+  KWETH = 'KWETH', // Kovan Testnet WETH (wrapped ETH)
 }
 
 /**
@@ -109,6 +113,8 @@ export enum MainnetOnChainTicker {
   XLM = 'XLM', // Stellar Lumens
   DCR = 'DCR', // Decred
   USDC = 'USDC', // USDC
+  ZRX = 'ZRX', // ZRX
+  WETH = 'WETH', // WETH (wrapped ETH)
 }
 
 /**
@@ -170,6 +176,9 @@ export enum SimnetMarket {
   SXLM_LSBTC = 'SXLM_LSBTC',
   SDCR_LSBTC = 'SDCR_LSBTC',
   SUSDC_LSBTC = 'SUSDC_LSBTC',
+  SZRX_SWETH = 'SZRX_SWETH',
+  SWETH_SDAI = 'SWETH_SDAI',
+  SWETH_SUSDC = 'SWETH_SUSDC',
 }
 
 /**
@@ -183,6 +192,9 @@ export enum TestnetMarket {
   TXLM_LTBTC = 'TXLM_LTBTC',
   TDCR_LTBTC = 'TDCR_LTBTC',
   KUSDC_LTBTC = 'KUSDC_LTBTC',
+  KZRX_KWETH = 'KZRX_KWETH',
+  KWETH_KDAI = 'KWETH_KDAI',
+  KWETH_KUSDC = 'KWETH_KUSDC',
 }
 
 /**
@@ -196,6 +208,9 @@ export enum MainnetMarket {
   XLM_LBTC = 'XLM_LBTC',
   DCR_LBTC = 'DCR_LBTC',
   USDC_LBTC = 'USDC_LBTC',
+  ZRX_WETH = 'ZRX_WETH',
+  WETH_DAI = 'WETH_DAI',
+  WETH_USDC = 'WETH_USDC',
 }
 
 /**
