@@ -33,7 +33,7 @@
     "less": "^3.10.3",
     "less-loader": "^5.0.0",
     "lint-staged": "^8.1.0",
-    "node-sass": "^4.9.0",
+    "node-sass": "^4.13.1",
     "prettier": "^1.15.2",
     "sass-loader": "^7.0.1",
     "typescript": "^3.7.0-beta",
